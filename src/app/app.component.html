@@ -1,3 +1,415 @@
 <h1>
   {{title}}
 </h1>
+<div>
+  <md-card>
+  <md-input-container>
+    <input mdInput placeholder="Favorite food" value="Sushi">
+  </md-input-container>
+  <md-select placeholder="Favorite food">
+    <md-option *ngFor="let food of foods" [value]="food.value">
+      {{ food.viewValue }}
+    </md-option>
+  </md-select>
+  </md-card>
+</div>
+
+<div class="red-indigo">
+  <md-card>
+  <md-input-container>
+    <input mdInput placeholder="Favorite food" value="Sushi">
+  </md-input-container>
+  </md-card>
+  <md-card>
+    <md-select placeholder="Favorite food" class="red-indigo">
+      <md-option *ngFor="let food of foods" [value]="food.value" class="red-indigo">
+        {{ food.viewValue }}
+      </md-option>
+    </md-select>
+  </md-card>
+  <md-card>
+    <md-checkbox>Check me!</md-checkbox>
+    <md-checkbox>Check me!</md-checkbox>
+    <md-checkbox>Check me!</md-checkbox>
+  </md-card>
+
+  <md-card>
+    <md-chip-list>
+      <md-chip>One fish</md-chip>
+      <md-chip>Two fish</md-chip>
+      <md-chip color="primary" selected="true">Primary fish</md-chip>
+      <md-chip color="accent" selected="true">Accent fish</md-chip>
+    </md-chip-list>
+  </md-card>
+
+  <md-card>
+    <md-progress-bar mode="indeterminate">xxxx</md-progress-bar>
+    <md-progress-bar mode="indeterminate">xxxx</md-progress-bar>
+    <md-progress-bar mode="indeterminate"></md-progress-bar>
+    <md-progress-bar mode="indeterminate"></md-progress-bar>
+  </md-card>
+
+  <md-card>
+    <md-autocomplete #auto="mdAutocomplete">
+      <md-option *ngFor="let state of filteredStates | async" [value]="state">
+        {{ state }}
+      </md-option>
+    </md-autocomplete>
+  </md-card>
+
+  <md-card>
+    <md-radio-group>
+      <md-radio-button value="1">Option 1</md-radio-button>
+      <md-radio-button value="2">Option 2</md-radio-button>
+    </md-radio-group>
+  </md-card>
+
+  <md-card>
+    <md-slider></md-slider>
+  </md-card>
+
+  <md-card>
+    <md-slide-toggle>Slide me!</md-slide-toggle>
+  </md-card>
+
+  <md-card>
+    <button md-button [mdMenuTriggerFor]="menu">Menu</button>
+  </md-card>
+  <md-card>
+    <md-menu #menu="mdMenu">
+      <button md-menu-item>Item 1</button>
+      <button md-menu-item>Item 2</button>
+    </md-menu>
+  </md-card>
+
+  <md-card>
+    <md-sidenav-container class="example-container">
+      <md-sidenav #sidenav class="example-sidenav">
+        Jolly good!
+      </md-sidenav>
+
+      <div class="example-sidenav-content">
+        <button md-button (click)="sidenav.open()">
+          Open sidenav
+        </button>
+      </div>
+
+    </md-sidenav-container>
+
+  </md-card>
+
+  <md-toolbar>My App</md-toolbar>
+
+  <md-list>
+    <md-list-item>Item 1</md-list-item>
+    <md-list-item>Item 2</md-list-item>
+    <md-list-item>Item 3</md-list-item>
+  </md-list>
+
+  <md-grid-list cols="2" rowHeight="2:1">
+    <md-grid-tile>1</md-grid-tile>
+    <md-grid-tile>2</md-grid-tile>
+    <md-grid-tile>3</md-grid-tile>
+    <md-grid-tile>4</md-grid-tile>
+  </md-grid-list>
+
+  <md-card>Simple card</md-card>
+
+  <md-card>
+    <md-tab-group>
+      <md-tab label="Tab 1">Content 1</md-tab>
+      <md-tab label="Tab 2">Content 2</md-tab>
+    </md-tab-group>
+  </md-card>
+
+  <md-card>
+
+    <button md-button>Click me!</button>
+
+    <md-button-toggle>Toggle me!</md-button-toggle>
+  </md-card>
+
+
+  <md-card>
+    <md-icon>home</md-icon>
+    <md-icon>home</md-icon>
+    <md-icon>home</md-icon>
+  </md-card>
+
+  <md-card>
+
+    <md-spinner></md-spinner>
+
+  </md-card>
+
+  <md-card>
+    <button md-button (click)="openDialog()">Open dialog</button>
+  </md-card>
+</div>
+
+
+<div class="yellow-green">
+  <md-card>
+    <md-input-container>
+      <input mdInput placeholder="Favorite food" value="Sushi">
+    </md-input-container>
+  </md-card>
+  <md-card>
+    <md-select placeholder="Favorite food" class="red-indigo">
+      <md-option *ngFor="let food of foods" [value]="food.value" class="red-indigo">
+        {{ food.viewValue }}
+      </md-option>
+    </md-select>
+  </md-card>
+  <md-card>
+    <md-checkbox>Check me!</md-checkbox>
+    <md-checkbox>Check me!</md-checkbox>
+    <md-checkbox>Check me!</md-checkbox>
+  </md-card>
+
+  <md-card>
+    <md-chip-list>
+      <md-chip>One fish</md-chip>
+      <md-chip>Two fish</md-chip>
+      <md-chip color="primary" selected="true">Primary fish</md-chip>
+      <md-chip color="accent" selected="true">Accent fish</md-chip>
+    </md-chip-list>
+  </md-card>
+
+  <md-card>
+    <md-progress-bar mode="indeterminate">xxxx</md-progress-bar>
+    <md-progress-bar mode="indeterminate">xxxx</md-progress-bar>
+    <md-progress-bar mode="indeterminate"></md-progress-bar>
+    <md-progress-bar mode="indeterminate"></md-progress-bar>
+  </md-card>
+
+  <md-card>
+    <md-autocomplete #auto="mdAutocomplete">
+      <md-option *ngFor="let state of filteredStates | async" [value]="state">
+        {{ state }}
+      </md-option>
+    </md-autocomplete>
+  </md-card>
+
+  <md-card>
+    <md-radio-group>
+      <md-radio-button value="1">Option 1</md-radio-button>
+      <md-radio-button value="2">Option 2</md-radio-button>
+    </md-radio-group>
+  </md-card>
+
+  <md-card>
+    <md-slider></md-slider>
+  </md-card>
+
+  <md-card>
+    <md-slide-toggle>Slide me!</md-slide-toggle>
+  </md-card>
+
+  <md-card>
+    <button md-button [mdMenuTriggerFor]="menu">Menu</button>
+  </md-card>
+  <md-card>
+    <md-menu #menu="mdMenu">
+      <button md-menu-item>Item 1</button>
+      <button md-menu-item>Item 2</button>
+    </md-menu>
+  </md-card>
+
+  <md-card>
+    <md-sidenav-container class="example-container">
+      <md-sidenav #sidenav class="example-sidenav">
+        Jolly good!
+      </md-sidenav>
+
+      <div class="example-sidenav-content">
+        <button md-button (click)="sidenav.open()">
+          Open sidenav
+        </button>
+      </div>
+
+    </md-sidenav-container>
+
+  </md-card>
+
+  <md-toolbar>My App</md-toolbar>
+
+  <md-list>
+    <md-list-item>Item 1</md-list-item>
+    <md-list-item>Item 2</md-list-item>
+    <md-list-item>Item 3</md-list-item>
+  </md-list>
+
+  <md-grid-list cols="2" rowHeight="2:1">
+    <md-grid-tile>1</md-grid-tile>
+    <md-grid-tile>2</md-grid-tile>
+    <md-grid-tile>3</md-grid-tile>
+    <md-grid-tile>4</md-grid-tile>
+  </md-grid-list>
+
+  <md-card>Simple card</md-card>
+
+  <md-card>
+    <md-tab-group>
+      <md-tab label="Tab 1">Content 1</md-tab>
+      <md-tab label="Tab 2">Content 2</md-tab>
+    </md-tab-group>
+  </md-card>
+
+  <md-card>
+
+    <button md-button>Click me!</button>
+
+    <md-button-toggle>Toggle me!</md-button-toggle>
+  </md-card>
+
+
+  <md-card>
+    <md-icon>home</md-icon>
+    <md-icon>home</md-icon>
+    <md-icon>home</md-icon>
+  </md-card>
+
+  <md-card>
+
+    <md-spinner></md-spinner>
+
+  </md-card>
+
+  <md-card>
+    <button md-button (click)="openDialog()">Open dialog</button>
+  </md-card>
+</div>
+
+<div class="orange-cyan">
+  <md-card>
+    <md-input-container>
+      <input mdInput placeholder="Favorite food" value="Sushi">
+    </md-input-container>
+  </md-card>
+  <md-card>
+    <md-select placeholder="Favorite food" class="red-indigo">
+      <md-option *ngFor="let food of foods" [value]="food.value" class="red-indigo">
+        {{ food.viewValue }}
+      </md-option>
+    </md-select>
+  </md-card>
+  <md-card>
+    <md-checkbox>Check me!</md-checkbox>
+    <md-checkbox>Check me!</md-checkbox>
+    <md-checkbox>Check me!</md-checkbox>
+  </md-card>
+
+  <md-card>
+    <md-chip-list>
+      <md-chip>One fish</md-chip>
+      <md-chip>Two fish</md-chip>
+      <md-chip color="primary" selected="true">Primary fish</md-chip>
+      <md-chip color="accent" selected="true">Accent fish</md-chip>
+    </md-chip-list>
+  </md-card>
+
+  <md-card>
+    <md-progress-bar mode="indeterminate">xxxx</md-progress-bar>
+    <md-progress-bar mode="indeterminate">xxxx</md-progress-bar>
+    <md-progress-bar mode="indeterminate"></md-progress-bar>
+    <md-progress-bar mode="indeterminate"></md-progress-bar>
+  </md-card>
+
+  <md-card>
+    <md-autocomplete #auto="mdAutocomplete">
+      <md-option *ngFor="let state of filteredStates | async" [value]="state">
+        {{ state }}
+      </md-option>
+    </md-autocomplete>
+  </md-card>
+
+  <md-card>
+    <md-radio-group>
+      <md-radio-button value="1">Option 1</md-radio-button>
+      <md-radio-button value="2">Option 2</md-radio-button>
+    </md-radio-group>
+  </md-card>
+
+  <md-card>
+    <md-slider></md-slider>
+  </md-card>
+
+  <md-card>
+    <md-slide-toggle>Slide me!</md-slide-toggle>
+  </md-card>
+
+  <md-card>
+    <button md-button [mdMenuTriggerFor]="menu">Menu</button>
+  </md-card>
+  <md-card>
+    <md-menu #menu="mdMenu">
+      <button md-menu-item>Item 1</button>
+      <button md-menu-item>Item 2</button>
+    </md-menu>
+  </md-card>
+
+  <md-card>
+    <md-sidenav-container class="example-container">
+      <md-sidenav #sidenav class="example-sidenav">
+        Jolly good!
+      </md-sidenav>
+
+      <div class="example-sidenav-content">
+        <button md-button (click)="sidenav.open()">
+          Open sidenav
+        </button>
+      </div>
+
+    </md-sidenav-container>
+
+  </md-card>
+
+  <md-toolbar>My App</md-toolbar>
+
+  <md-list>
+    <md-list-item>Item 1</md-list-item>
+    <md-list-item>Item 2</md-list-item>
+    <md-list-item>Item 3</md-list-item>
+  </md-list>
+
+  <md-grid-list cols="2" rowHeight="2:1">
+    <md-grid-tile>1</md-grid-tile>
+    <md-grid-tile>2</md-grid-tile>
+    <md-grid-tile>3</md-grid-tile>
+    <md-grid-tile>4</md-grid-tile>
+  </md-grid-list>
+
+  <md-card>Simple card</md-card>
+
+  <md-card>
+    <md-tab-group>
+      <md-tab label="Tab 1">Content 1</md-tab>
+      <md-tab label="Tab 2">Content 2</md-tab>
+    </md-tab-group>
+  </md-card>
+
+  <md-card>
+
+    <button md-button>Click me!</button>
+
+    <md-button-toggle>Toggle me!</md-button-toggle>
+  </md-card>
+
+
+  <md-card>
+    <md-icon>home</md-icon>
+    <md-icon>home</md-icon>
+    <md-icon>home</md-icon>
+  </md-card>
+
+  <md-card>
+
+    <md-spinner></md-spinner>
+
+  </md-card>
+
+  <md-card>
+    <button md-button (click)="openDialog()">Open dialog</button>
+  </md-card>
+</div>

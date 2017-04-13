@@ -1,0 +1,55 @@
+@import '../node_modules/@angular/material/theming';
+
+// NOTE: Theming is currently experimental and not yet publically released!
+
+// Include non-theme styles for core.
+@include mat-core();
+// Define a theme.
+$primary: mat-palette($mat-yellow, 700, 500, 800);
+$accent:  mat-palette($mat-green, A200, A100, A400);
+$theme: mat-light-theme($primary, $accent);
+
+// Include all theme styles for the components.
+@include angular-material-theme($theme);
+
+.red-indigo{
+  $primary1: mat-palette($mat-red);
+  $accent1:  mat-palette($mat-indigo, A200, A100, A400);
+  $theme1: mat-light-theme($primary1, $accent1);
+  @include angular-material-theme($theme1);
+}
+.yellow-green{
+  $primary1: mat-palette($mat-yellow);
+  $accent1:  mat-palette($mat-green, A200, A100, A400);
+  $theme1: mat-light-theme($primary1, $accent1);
+  @include angular-material-theme($theme1);
+}
+.orange-cyan{
+  $primary1: mat-palette($mat-orange);
+  $accent1:  mat-palette($mat-cyan, A200, A100, A400);
+  $theme1: mat-light-theme($primary1, $accent1);
+  @include angular-material-theme($theme1);
+}
+
+//.yellow-green{
+//  // Define a theme.
+//  $primary: mat-palette($mat-yellow);
+//  $accent:  mat-palette($mat-green, A200, A100, A400);
+//  $theme: mat-light-theme($primary, $accent);
+//
+//  // Include all theme styles for the components.
+//  @include angular-material-theme($theme);
+//
+//}
+//
+//
+//.orange-cyan{
+//  // Define a theme.
+//  $primary: mat-palette($mat-orange);
+//  $accent:  mat-palette($mat-cyan A200, A100, A400);
+//  $theme: mat-light-theme($primary, $accent);
+//
+//  // Include all theme styles for the components.
+//  @include angular-material-theme($theme);
+//
+//}
